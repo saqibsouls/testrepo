@@ -1,0 +1,38 @@
+
+
+def autoConnecct():
+	brokerAdd = "192.168.1.253"
+	user	= "manusha"
+	password = "manusha"
+	mqttclient.init()
+	mqttclient.connect(brokerAdd, user, password)
+	mqttclient.subscribe("Temperature");mqttclient.subscribe("Humidity")
+	CLI.exit()
+
+
+
+
+
+
+def autoConnecct():
+	brokerAdd = "192.168.1.253"
+	user	= "manusha"
+	password = "manusha"
+	mqttclient.init()
+	mqttclient.connect(brokerAdd, user, password)
+	mqttclient.subscribe("Temperature")
+	CLI.exit()
+
+
+
+
+if packet["topic"] == "Temperature":
+		value = packet["payload"]
+		value = float(value.replace('\'C', '')) /2.0
+		print value
+		customWrite(0, value)
+
+
+
+
+	
